@@ -2,11 +2,11 @@
 
 Name:           python-genshi
 Version:        0.7.3
-Release:        6
+Release:        7
 Summary:        Toolkit for stream-based generation of output for the web
 License:        BSD
 URL:            http://genshi.edgewall.org/
-Source0:        http://ftp.edgewall.com/pub/genshi/Genshi-%{version}.tar.gz
+Source0:        https://files.pythonhosted.org/packages/source/G/Genshi/Genshi-%{version}.tar.gz
 Patch0:         0001-python-genshi-fix-some-syntax-error.patch
 
 BuildArch:      noarch
@@ -62,6 +62,9 @@ cd -
 %{python3_sitelib}/genshi
 
 %changelog
+* Tue Dec 22 2020 lingsheng <lingsheng@huaweu.com> - 0.7.3-7
+- Fix wrong source0 url
+
 * Mon Jun 28 2020 Captain Wei <captain.a.wei@gmail.com> - 0.7.3-6
 - Upgrade package
 
