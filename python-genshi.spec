@@ -1,17 +1,17 @@
 %global _python_bytecompile_extra 1
 
 Name:           python-genshi
-Version:        0.7.3
-Release:        7
+Version:        0.7.5
+Release:        1
 Summary:        Toolkit for stream-based generation of output for the web
 License:        BSD
 URL:            http://genshi.edgewall.org/
 Source0:        https://files.pythonhosted.org/packages/source/G/Genshi/Genshi-%{version}.tar.gz
-Patch0:         0001-python-genshi-fix-some-syntax-error.patch
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-six
 
 %description
 Genshi is a Python library that provides an integrated set of 
@@ -62,6 +62,9 @@ cd -
 %{python3_sitelib}/genshi
 
 %changelog
+* Thu Jan 6 2022 yaoxin <yaoxin30@huawei.com> - 0.7.5-1
+- Fixed the issue that python-genshi could not recognize the parameter use_2to3 in the %build stage due to the upgrade of  python-setuptools to version 59.4.0
+
 * Tue Dec 22 2020 lingsheng <lingsheng@huaweu.com> - 0.7.3-7
 - Fix wrong source0 url
 
