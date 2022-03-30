@@ -1,17 +1,18 @@
 %global _python_bytecompile_extra 1
 
 Name:           python-genshi
-Version:        0.7.3
-Release:        7
+Version:        0.7.6
+Release:        1
 Summary:        Toolkit for stream-based generation of output for the web
 License:        BSD
 URL:            http://genshi.edgewall.org/
 Source0:        https://files.pythonhosted.org/packages/source/G/Genshi/Genshi-%{version}.tar.gz
-Patch0:         0001-python-genshi-fix-some-syntax-error.patch
+
 
 BuildArch:      noarch
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
+BuildRequires:  python3-six
 
 %description
 Genshi is a Python library that provides an integrated set of 
@@ -38,11 +39,13 @@ cp -a . %{py3dir}
 find examples -type f | xargs chmod a-x
 
 %build
+export GENSHI_BUILD_SPEEDUP=0
 cd %{py3dir}
 %py3_build
 cd -
 
 %install
+export GENSHI_BUILD_SPEEDUP=0
 cd %{py3dir}
 %py3_install
 rm -rf %{buildroot}%{python3_sitelib}/genshi/tests
@@ -62,6 +65,9 @@ cd -
 %{python3_sitelib}/genshi
 
 %changelog
+* Wed Mar 30 2022 xigaoxinyan <xigaoxinyan@huawei.com> - 0.7.6-1
+- update to 0.7.6
+
 * Tue Dec 22 2020 lingsheng <lingsheng@huaweu.com> - 0.7.3-7
 - Fix wrong source0 url
 
