@@ -1,7 +1,7 @@
 %global _python_bytecompile_extra 1
 
 Name:           python-genshi
-Version:        0.7.6
+Version:        0.7.7
 Release:        1
 Summary:        Toolkit for stream-based generation of output for the web
 License:        BSD
@@ -65,6 +65,9 @@ cd -
 %{python3_sitelib}/genshi
 
 %changelog
+* Mon Sep 12 2022 hkgy <kaguyahatu@outlook.com> - 0.7.7-1
+- Update to 0.7.7
+
 * Wed Mar 30 2022 xigaoxinyan <xigaoxinyan@huawei.com> - 0.7.6-1
 - update to 0.7.6
 
